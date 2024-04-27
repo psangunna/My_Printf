@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pamela <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/27 11:03:13 by pamela            #+#    #+#              #
+#    Updated: 2024/04/27 11:03:34 by pamela           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIB = ar -rcs
@@ -6,7 +18,7 @@ RM = rm -f
 NAME = libftprintf.a
 
 SOURCE_FILES = ft_printf.c ft_analyze_structure.c ft_display_structure.c ft_display_char.c\
-	ft_display_str.c ft_display_digit.c ft_common_aux.c ft_disdigit_aux.c 
+	ft_display_str.c ft_display_digit.c ft_common_aux.c ft_disdigit_aux.c ft_print_chars.c
 OBJECT_FILES = $(SOURCE_FILES:.c=.o)
 
 all: $(NAME)

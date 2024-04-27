@@ -1,17 +1,18 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:17:22 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:49:02 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/27 15:28:26 by psanguna         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int	main(void)
 {
@@ -52,18 +53,44 @@ int	main(void)
 	count = printf("%p\n", pointer);
 	printf("Count:%d\n", count);
 	count = ft_printf("%p\n", pointer);
-	count = printf("MyCount:%d\n", count);
+	printf("MyCount:%d\n", count);
 	count = printf("%*c\n", 10, 'g');
-	count = printf("Count:%d\n", count);
+	printf("Count:%d\n", count);
 	count = ft_printf("%*c\n", 10, 'g');
-	count = printf("MyCount:%d\n", count);
+	printf("MyCount:%d\n", count);
 	count = printf("%*i\n%d\n", 10, 23, 50);
-	count = printf("Count:%d\n", count);
+	printf("Count:%d\n", count);
 	count = ft_printf("%*i\n%d\n", 10, 23, 50);
-	count = printf("MyCount:%d\n", count);
+	printf("MyCount:%d\n", count);
 	count = printf("%*s\n", 10, "gata");
-	count = printf("Count:%d\n", count);
+	printf("Count:%d\n", count);
 	count = ft_printf("%*s\n", 10, "gata");
-	count = printf("MyCount:%d\n", count);
+	printf("MyCount:%d\n", count);
+
+	printf("Pruebas desbordamiento\n");
+	count = printf("%p\n", (void *)-14523);
+	printf("Count:%d\n", count);
+	count = ft_printf("%p\n", (void *)-14523);
+	printf("MyCount:%d\n", count);
+	count = printf("0x%p-\n", (void *)ULONG_MAX);
+	printf("Count:%d\n", count);
+	count = ft_printf("0x%p-\n", (void *)ULONG_MAX);
+	printf("MyCount:%d\n", count);
+	count = printf("at\n=sq\v;%pp\n_Mt%xo,T#%diNk+/%%[%it* `4%um{\ny.B8%X$/!1zR#nPy%sjwnO5", (void *)-6506301648355864279, 2141186925, 2043167108, -1243449557, -1345113910, -332442644, "<Qsb)>!,bB|-nt7N\\4f");
+	printf("Count:%d\n", count);
+	count = ft_printf("at\n=sq\v;%pp\n_Mt%xo,T#%diNk+/%%[%it* `4%um{\ny.B8%X$/!1zR#nPy%sjwnO5", (void *)-6506301648355864279, 2141186925, 2043167108, -1243449557, -1345113910, -332442644, "<Qsb)>!,bB|-nt7N\\4f");
+	printf("MyCount:%d\n", count);
+	printf(" %+d %+d %+d %+d %+d %+d %+d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf(" %+d %+d %+d %+d %+d %+d %+d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(" %+d \n", 9223372036854775807LL);
+	ft_printf(" %+d \n", 9223372036854775807LL);
+	printf(" %+i %+i %+i %+i %+i %+i %+i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf(" %+i %+i %+i %+i %+i %+i %+i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(" %+i \n", 9223372036854775807LL);
+	ft_printf(" %+i \n", 9223372036854775807LL);
+	printf(" %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf(" %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(" %#X \n", 9223372036854775807LL);
+	ft_printf(" %#X \n", 9223372036854775807LL);
 	return (0);
 }

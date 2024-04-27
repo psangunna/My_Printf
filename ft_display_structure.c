@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:24:21 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:46:26 by pamela           ###   ########.fr       */
+/*   Created: 2024/04/27 14:52:34 by pamela            #+#    #+#             */
+/*   Updated: 2024/04/27 14:52:38 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,27 @@ and displays it.
 */
 static void	treat_digit(t_flags *data, va_list *args)
 {
-	char	specifier;
-	long	digit;
+	char			specifier;
+	t_type_digit	values;
 
 	specifier = data->specifier;
 	if ('d' == specifier || 'i' == specifier)
 	{
 		data->signed_value = 1;
-		digit = (long)(va_arg(*args, int));
-		if (digit < 0)
+		values.sig_value = (long)(va_arg(*args, int));
+		if (values.sig_value < 0)
 			data->is_negative = 1;
-		ft_display_digit(data, digit);
+		ft_display_digit(data, values);
 	}
 	else if ('x' == specifier || 'X' == specifier || 'u' == specifier)
 	{
-		digit = (long)(va_arg(*args, unsigned int));
-		ft_display_digit(data, digit);
+		values.unsig_value = (unsigned long)(va_arg(*args, unsigned int));
+		ft_display_digit(data, values);
 	}
 	else if ('p' == specifier)
 	{
-		digit = (long)(va_arg(*args, void *));
-		ft_display_digit(data, digit);
+		values.unsig_value = (unsigned long)(va_arg(*args, void *));
+		ft_display_digit(data, values);
 	}
 }
 

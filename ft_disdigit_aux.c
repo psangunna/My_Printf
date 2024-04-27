@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:24:39 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:45:23 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/27 14:56:25 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,30 @@ specified base. It recursively divides the value by the base and stores
 the remainder as digits in the temp array of the t_flags structure. 
 It also handles negative values by converting them to positive before recursion.
 */
-void	ft_itoa_base(t_flags *data, long value)
+void	ft_itoa_base(t_flags *data, t_type_digit value)
 {
-	long	tmp;
+	t_type_digit	tmp;
 
 	if (data->base < 2 || data->base > 16)
 		return ;
 	if (data->is_negative && !data->is_converted)
 	{
-		value = -value;
+		value.sig_value = -(value.sig_value);
 		data->is_converted = 1;
 		ft_itoa_base(data, value);
 	}
-	else if (value < data->base)
+	else if (value.unsig_value < (unsigned long)data->base)
 	{
 		if (data->upper_case)
-			data->temp[data->nbr_len++] = UP_SYMBOLS[value];
+			data->temp[data->nbr_len++] = UP_SYMBOLS[value.unsig_value];
 		else
-			data->temp[data->nbr_len++] = LOW_SYMBOLS[value];
+			data->temp[data->nbr_len++] = LOW_SYMBOLS[value.unsig_value];
 	}
 	else
 	{
-		tmp = value / data->base;
+		tmp.unsig_value = value.unsig_value / data->base;
 		ft_itoa_base(data, tmp);
-		tmp = value % data->base;
+		tmp.unsig_value = value.unsig_value % data->base;
 		ft_itoa_base(data, tmp);
 	}
 }

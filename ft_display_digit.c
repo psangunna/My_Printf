@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:23:36 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:45:50 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/27 13:41:37 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ ft_set_padding_spaces, respectively. Depending on whether left justification
 is enabled, it then displays the sign, zero padding, the digit itself, and 
 finally space padding.
 */
-void	ft_display_digit(t_flags *data, long value)
+void	ft_display_digit(t_flags *data, t_type_digit values)
 {
-	ft_itoa_base(data, value);
+	ft_itoa_base(data, values);
 	ft_set_padding_zeros(data);
 	ft_set_padding_spaces(data);
 	if (data->left_justified)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:25:15 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:44:54 by pamela           ###   ########.fr       */
+/*   Created: 2024/04/27 11:02:30 by pamela            #+#    #+#             */
+/*   Updated: 2024/04/27 11:02:38 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	init_flags(t_flags *flags)
 	flags->is_negative = 0;
 	flags->is_converted = 0;
 	flags->nbr_len = 0;
-	flags->temp[64] = 0;
+	ft_memset(flags->temp, 0, sizeof(flags->temp));
 }
 
 /*
