@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 11:02:30 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/27 11:02:38 by pamela           ###   ########.fr       */
+/*   Created: 2024/04/29 17:17:14 by pamela            #+#    #+#             */
+/*   Updated: 2024/04/29 17:17:20 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,14 @@ int	ft_printf(const char *str, ...)
 		{
 			str++;
 			init_flags(&flags);
-			if (ft_analyze_structure(&flags, &str, &args))
-				return (-1);
-			ft_display_structure(&flags, &args);
+			if (!ft_analyze_structure(&flags, &str, &args))
+				ft_display_structure(&flags, &args);
 		}
 		else
 		{
 			ft_putchar_written(*str, &flags.chars_written);
 		}
-		++str;
+		str++;
 	}
 	va_end(args);
 	return (flags.chars_written);
