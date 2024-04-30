@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:18:21 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/29 17:20:35 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 10:25:05 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ static void	analyze_flags(t_flags *data, const char **str)
 	while (ft_strchr((const char *)FLAGS, **str))
 	{
 		flag = **str;
-		if ('0' == flag)
+		if (flag == '0')
 			data->zero_pad = 1;
-		else if ('+' == flag)
+		else if (flag == '+')
 			data->plus = 1;
-		else if (' ' == flag)
+		else if (flag == ' ')
 			data->space = 1;
-		else if ('#' == flag)
+		else if (flag == '#')
 			data->hash = 1;
-		else if ('-' == flag)
+		else if (flag == '-')
 			data->left_justified = 1;
-		++(*str);
+		(*str)++;
 	}
 }
 
@@ -50,7 +50,7 @@ static int	get_value_atoi(const char **str)
 	while (ft_strchr((char const *)NUMBERS, **str))
 	{
 		value = (value * 10) + (**str - '0');
-		++*str;
+		(*str)++;
 	}
 	return (value);
 }
@@ -66,7 +66,7 @@ static void	get_value(int *value, const char **str, va_list *args)
 	if (**str == '*')
 	{
 		*value = va_arg(*args, int);
-		++*str;
+		(*str)++;
 		return ;
 	}
 	*value = get_value_atoi(str);

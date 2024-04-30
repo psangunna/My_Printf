@@ -6,7 +6,7 @@
 /*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:17:22 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/29 16:58:42 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 10:29:14 by pamela           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,9 +38,9 @@ int	main(void)
 	printf("Count:%d\n", count);
 	count = ft_printf("Buenos %-10.3s\n", "Pamela");
 	printf("MyCount:%d\n", count);
-	count = printf("Buenos %+10d\n", -23);
+	count = printf("Buenos %+0.10d\n", -23);
 	printf("Count:%d\n", count);
-	count = ft_printf("Buenos %+10d\n", -23);
+	count = ft_printf("Buenos %+0.10d\n", -23);
 	printf("MyCount:%d\n", count);
 	count = printf("%#x\n", -42);
 	printf("Count:%d\n", count);

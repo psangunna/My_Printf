@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:52:34 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/27 14:52:38 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 10:37:02 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	treat_digit(t_flags *data, va_list *args)
 	t_type_digit	values;
 
 	specifier = data->specifier;
-	if ('d' == specifier || 'i' == specifier)
+	if (specifier == 'd' || specifier == 'i')
 	{
 		data->signed_value = 1;
 		values.sig_value = (long)(va_arg(*args, int));
@@ -34,12 +34,12 @@ static void	treat_digit(t_flags *data, va_list *args)
 			data->is_negative = 1;
 		ft_display_digit(data, values);
 	}
-	else if ('x' == specifier || 'X' == specifier || 'u' == specifier)
+	else if (specifier == 'x' || specifier == 'X' || specifier == 'u')
 	{
 		values.unsig_value = (unsigned long)(va_arg(*args, unsigned int));
 		ft_display_digit(data, values);
 	}
-	else if ('p' == specifier)
+	else if (specifier == 'p')
 	{
 		values.unsig_value = (unsigned long)(va_arg(*args, void *));
 		ft_display_digit(data, values);
@@ -59,11 +59,11 @@ void	ft_display_structure(t_flags *data, va_list *args)
 	char	specifier;
 
 	specifier = data->specifier;
-	if ('%' == specifier)
+	if (specifier == '%')
 		ft_display_char(data, '%');
-	else if ('c' == specifier)
+	else if (specifier == 'c')
 		ft_display_char(data, va_arg(*args, int));
-	else if ('s' == specifier)
+	else if (specifier == 's')
 		ft_display_str(data, va_arg(*args, char *));
 	else if (ft_strchr((const char *)"diupxX", data->specifier))
 	{
