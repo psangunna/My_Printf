@@ -6,7 +6,7 @@
 /*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:17:22 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 10:29:14 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:47:28 by pamela           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,9 +38,9 @@ int	main(void)
 	printf("Count:%d\n", count);
 	count = ft_printf("Buenos %-10.3s\n", "Pamela");
 	printf("MyCount:%d\n", count);
-	count = printf("Buenos %+0.10d\n", -23);
+	count = printf("Buenos %+10d\n", -23);
 	printf("Count:%d\n", count);
-	count = ft_printf("Buenos %+0.10d\n", -23);
+	count = ft_printf("Buenos %+10d\n", -23);
 	printf("MyCount:%d\n", count);
 	count = printf("%#x\n", -42);
 	printf("Count:%d\n", count);
@@ -95,7 +95,47 @@ int	main(void)
 	ft_printf(" %+i \n", 9223372036854775807LL);
 	printf(" %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	ft_printf(" %#X %#X %#X %#X %#X %#X %#X\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf(" %#X \n", 9223372036854775807LL);
-	ft_printf(" %#X \n", 9223372036854775807LL);
+	count = printf(" %#X \n", 9223372036854775807LL);
+	printf("Count:%d\n", count);
+	count  = ft_printf(" %#X \n", 9223372036854775807LL);
+	printf("MyCount:%d\n", count);
+	printf("\n");
+	printf("test pointer");
+	count = printf(" %p ", -1);
+	printf("Count:%d\n", count);
+	count = ft_printf(" %p ", -1);
+	printf("MyCount:%d\n", count);
+	printf("\n");
+    ft_printf(" %p ", 1);
+	printf("\n");
+	ft_printf(" %p ", 15);
+	printf("\n");
+	ft_printf(" %p ", 16);
+	printf("\n");
+	ft_printf(" %p ", 17);
+	printf("\n");
+	count = printf(" %p %p ", LONG_MIN, LONG_MAX);
+	printf("Count:%d\n", count);
+	count = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+	printf("MyCount:%d\n", count);
+	printf("\n");
+	count = printf(" %p %p ", INT_MIN, INT_MAX);
+	printf("Count:%d\n", count);
+	count = ft_printf(" %p %p ", INT_MIN, INT_MAX);
+	printf("MyCount:%d\n", count);
+	printf("\n");
+	count = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	printf("Count:%d\n", count);
+	count = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	printf("MyCount:%d\n", count);
+	printf("\n");
+	count = printf("%-0.9p %p\n", 0, 0);
+	printf("Count:%d\n", count);
+	count = ft_printf("%-0.9p %p\n", 0, 0);
+	printf("MyCount:%d\n", count);
+	count = printf("%10s %s ", 0, 0);
+	printf("Count:%d\n", count);
+	count = ft_printf("%10s %s ", 0, 0);
+	printf("MyCount:%d\n", count);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:23:36 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/27 13:41:37 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:15:28 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	put_0x(t_flags *data)
 {
 	if ((ft_strchr((const char *)"xX", data->specifier) && \
 			data->hash && data->temp[0] != '0') || \
-			data->specifier == 'p')
+			(data->specifier == 'p' && data->no_value != 1))
 	{
 		if (data->upper_case)
 			ft_putstr_n("0X", 2, &(data->chars_written));
@@ -68,7 +68,8 @@ finally space padding.
 */
 void	ft_display_digit(t_flags *data, t_type_digit values)
 {
-	ft_itoa_base(data, values);
+	if (data->no_value == 0)
+		ft_itoa_base(data, values);
 	ft_set_padding_zeros(data);
 	ft_set_padding_spaces(data);
 	if (data->left_justified)

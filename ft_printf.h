@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 17:16:24 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/29 17:16:30 by pamela           ###   ########.fr       */
+/*   Created: 2024/04/30 20:59:59 by pamela            #+#    #+#             */
+/*   Updated: 2024/04/30 21:00:04 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_flags
 	int		nbr_len;
 	char	specifier;
 	char	temp[64];
+	int		no_value;
 	int		chars_written;
 
 }	t_flags;
@@ -78,6 +79,7 @@ void	ft_display_digit(t_flags *data, t_type_digit values);
 char	*ft_strchr(const char *str, int c);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *ptr, int c, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	ft_putchar_written(char c, int *chars_written);
 void	ft_putchar_n(char c, int precision, int *chars_written);
 void	ft_display_char(t_flags *data, int c);

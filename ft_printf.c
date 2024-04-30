@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:17:14 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/29 17:17:20 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:00:47 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	init_flags(t_flags *flags)
 	flags->is_negative = 0;
 	flags->is_converted = 0;
 	flags->nbr_len = 0;
+	flags->no_value = 0;
 	ft_memset(flags->temp, 0, sizeof(flags->temp));
 }
 

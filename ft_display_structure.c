@@ -6,11 +6,19 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:52:34 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 10:37:02 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:44:22 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	set_nil(t_flags *data)
+{
+	data->no_value = 1;
+	data->precision_value = -1;
+	data->nbr_len = 5;
+	ft_memcpy(&(data->temp), "(nil)", 5);
+}
 
 /*
 This function processes integer and pointer types.
@@ -42,6 +50,8 @@ static void	treat_digit(t_flags *data, va_list *args)
 	else if (specifier == 'p')
 	{
 		values.unsig_value = (unsigned long)(va_arg(*args, void *));
+		if (values.unsig_value == 0)
+			set_nil(data);
 		ft_display_digit(data, values);
 	}
 }

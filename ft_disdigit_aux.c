@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:24:39 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/27 14:56:25 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:04:41 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	set_zero_pad(t_flags *data)
 		return ;
 	else if ((ft_strchr((const char *)"xX", data->specifier) && \
 		data->hash && data->temp[0] != '0') || \
-		data->specifier == 'p')
+		(data->specifier == 'p' && data->no_value != 1))
 		data->padding_zeros -= 2;
 	else if (data->is_negative || (!data->is_negative && \
 				(data->plus || data->space)))
@@ -103,7 +103,8 @@ void	ft_set_padding_spaces(t_flags *data)
 	if (ft_strchr((const char *)"uxXp", data->specifier))
 	{
 		if ((ft_strchr((const char *)"xX", data->specifier) && data->hash \
-					&& data->temp[0] != '0') || data->specifier == 'p')
+					&& data->temp[0] != '0') || (data->specifier == 'p'\
+				&& data->no_value != 1))
 			data->padding_spaces -= 2;
 		return ;
 	}
