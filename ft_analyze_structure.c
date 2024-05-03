@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:18:21 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 10:25:05 by pamela           ###   ########.fr       */
+/*   Updated: 2024/05/03 13:25:57 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int	ft_analyze_structure(t_flags *data, const char **str, va_list *args)
 	if (!ft_strchr((const char *)SPECIFIERS, **str))
 	{
 		ft_putchar_written('%', &data->chars_written);
-		ft_putstr_aux(str, &data->chars_written);
 		return (-1);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 20:59:59 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:00:04 by pamela           ###   ########.fr       */
+/*   Updated: 2024/05/03 16:01:31 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	ft_putchar_written(char c, int *chars_written);
 void	ft_putchar_n(char c, int precision, int *chars_written);
 void	ft_display_char(t_flags *data, int c);
 void	ft_putstr_n(char *s, int precision, int *chars_written);
-void	ft_putstr_aux(const char **s, int *chars_written);
 void	ft_display_str(t_flags *data, char *s);
 
 void	ft_itoa_base(t_flags *data, t_type_digit value);

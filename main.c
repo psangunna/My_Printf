@@ -6,7 +6,7 @@
 /*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:17:22 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:47:28 by pamela           ###   ########.fr       */
+/*   Updated: 2024/04/30 17:40:31 by psanguna         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -129,13 +129,13 @@ int	main(void)
 	count = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
 	printf("MyCount:%d\n", count);
 	printf("\n");
-	count = printf("%-0.9p %p\n", 0, 0);
+	count = printf(" %p %p ", 0, 0);
 	printf("Count:%d\n", count);
-	count = ft_printf("%-0.9p %p\n", 0, 0);
+	count = ft_printf(" %p %p ", 0, 0);
 	printf("MyCount:%d\n", count);
-	count = printf("%10s %s ", 0, 0);
+	count = printf(" %s %s ", 0, 0);
 	printf("Count:%d\n", count);
-	count = ft_printf("%10s %s ", 0, 0);
+	count = ft_printf(" %s %s ", 0, 0);
 	printf("MyCount:%d\n", count);
 	return (0);
 }

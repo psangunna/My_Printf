@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:17:14 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:00:47 by pamela           ###   ########.fr       */
+/*   Updated: 2024/05/03 14:19:39 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,14 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (*str)
 	{
-		if (*str == '%')
+		if (*str == '%' && (*(str + 1) != '\0'))
 		{
 			str++;
 			init_flags(&flags);
 			if (!ft_analyze_structure(&flags, &str, &args))
 				ft_display_structure(&flags, &args);
+			else
+				ft_putchar_written(*str, &flags.chars_written);
 		}
 		else
 		{

@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:52:34 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:44:22 by pamela           ###   ########.fr       */
+/*   Updated: 2024/05/03 13:24:39 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ void	ft_display_structure(t_flags *data, va_list *args)
 
 	specifier = data->specifier;
 	if (specifier == '%')
+	{
+		data->width_value = 0;
 		ft_display_char(data, '%');
+	}
 	else if (specifier == 'c')
 		ft_display_char(data, va_arg(*args, int));
 	else if (specifier == 's')

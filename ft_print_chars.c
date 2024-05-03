@@ -6,7 +6,7 @@
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:14:35 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/29 17:21:46 by pamela           ###   ########.fr       */
+/*   Updated: 2024/05/03 16:00:37 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,6 @@ void	ft_putchar_n(char c, int precision, int *chars_written)
 		return ;
 	while (precision--)
 		ft_putchar_written(c, chars_written);
-}
-
-/*
- * Function to write a char n when
- * the flag are not the expected values
-*/
-void	ft_putstr_aux(const char **s, int *chars_written)
-{
-	const char	*temp;
-
-	temp = *s;
-	while (*temp && *temp != '%')
-	{
-		ft_putchar_written(*temp, chars_written);
-		temp++;
-	}
-	if (*temp == '%')
-	{
-		if (*(temp + 1) != '\0')
-		{
-			temp--;
-		}
-		else
-		{
-			ft_putchar_written('%', chars_written);
-		}
-	}
-	*s = temp;
 }
 
 /*
