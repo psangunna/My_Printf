@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 17:17:14 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/03 14:19:39 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:14:09 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:16:35 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 /*
-This function initializes a structure t_flags which contains various flags and
+This function initializes a structure t_format which contains various format and
 values used for formatting output in the ft_printf function.
 */
-static void	init_flags(t_flags *flags)
+static void	init_format(t_format *format)
 {
-	flags->left_justified = 0;
-	flags->plus = 0;
-	flags->space = 0;
-	flags->hash = 0;
-	flags->zero_pad = 0;
-	flags->specifier = 0;
-	flags->width_value = 0;
-	flags->precision_value = -1;
-	flags->upper_case = 0;
-	flags->base = 0;
-	flags->padding_spaces = 0;
-	flags->padding_zeros = 0;
-	flags->signed_value = 0;
-	flags->is_negative = 0;
-	flags->is_converted = 0;
-	flags->nbr_len = 0;
-	flags->no_value = 0;
-	ft_memset(flags->temp, 0, sizeof(flags->temp));
+	format->left_justified = 0;
+	format->plus = 0;
+	format->space = 0;
+	format->hash = 0;
+	format->zero_pad = 0;
+	format->specifier = 0;
+	format->width_value = 0;
+	format->precision_value = -1;
+	format->upper_case = 0;
+	format->base = 0;
+	format->padding_spaces = 0;
+	format->padding_zeros = 0;
+	format->signed_value = 0;
+	format->is_negative = 0;
+	format->is_converted = 0;
+	format->nbr_len = 0;
+	format->no_value = 0;
+	ft_memset(format->temp, 0, sizeof(format->temp));
 }
 
 /*
 This is the main ft_printf function. 
 It iterates through the input string str, processing it character by character. 
 When it encounters a '%' character, it assumes a format specifier is coming up
-next and calls init_flags to initialize the flags structure. Then it analyzes 
-the format specifier using ft_analyze_structure, which updates the flags 
+next and calls init_format to initialize the format structure. Then it analyzes 
+the format specifier using ft_analyze_structure, which updates the format 
 structure based on the specifier and additional arguments. 
 Finally, it displays the formatted output using ft_display_structure. 
 If it encounters a character that is not a '%', it simply outputs it. 
@@ -52,28 +52,28 @@ characters written.
 */
 int	ft_printf(const char *str, ...)
 {
-	t_flags	flags;
-	va_list	args;
+	t_format	format;
+	va_list		args;
 
-	flags.chars_written = 0;
+	format.chars_written = 0;
 	va_start(args, str);
 	while (*str)
 	{
 		if (*str == '%' && (*(str + 1) != '\0'))
 		{
 			str++;
-			init_flags(&flags);
-			if (!ft_analyze_structure(&flags, &str, &args))
-				ft_display_structure(&flags, &args);
+			init_format(&format);
+			if (!ft_analyze_structure(&format, &str, &args))
+				ft_display_structure(&format, &args);
 			else
-				ft_putchar_written(*str, &flags.chars_written);
+				ft_putchar_written(*str, &format.chars_written);
 		}
 		else
 		{
-			ft_putchar_written(*str, &flags.chars_written);
+			ft_putchar_written(*str, &format.chars_written);
 		}
 		str++;
 	}
 	va_end(args);
-	return (flags.chars_written);
+	return (format.chars_written);
 }

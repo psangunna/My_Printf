@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_digit.c                                 :+:      :+:    :+:   */
+/*   ft_display_digit_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:23:36 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:15:28 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:10:56 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:11:00 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 /*
  * Set zeros to pad
@@ -20,7 +20,7 @@
 This function adds the '0x' or '0X' prefix before hexadecimal numbers or
 pointers if the hash flag ('#') is set.
 */
-static void	put_0x(t_flags *data)
+static void	set_0x(t_format *data)
 {
 	if ((ft_strchr((const char *)"xX", data->specifier) && \
 			data->hash && data->temp[0] != '0') || \
@@ -40,10 +40,10 @@ If the number is signed, it displays the negative sign for negative numbers,
 or '+' for positive numbers if the plus flag ('+') is set, or space padding 
 if the space flag (' ') is set.
 */
-static void	put_sign(t_flags *data)
+static void	put_sign(t_format *data)
 {
 	if (data->base == 16)
-		put_0x(data);
+		set_0x(data);
 	else if (data->signed_value)
 	{
 		if (data->is_negative)
@@ -66,7 +66,7 @@ ft_set_padding_spaces, respectively. Depending on whether left justification
 is enabled, it then displays the sign, zero padding, the digit itself, and 
 finally space padding.
 */
-void	ft_display_digit(t_flags *data, t_type_digit values)
+void	ft_display_digit(t_format *data, t_type_digit values)
 {
 	if (data->no_value == 0)
 		ft_itoa_base(data, values);

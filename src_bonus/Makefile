@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pamela <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/27 11:03:13 by pamela            #+#    #+#              #
-#    Updated: 2024/04/27 11:03:34 by pamela           ###   ########.fr        #
+#    Created: 2024/05/05 22:15:08 by pamela            #+#    #+#              #
+#    Updated: 2024/05/05 22:15:14 by pamela           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ RM = rm -f
 
 NAME = libftprintf.a
 
-SOURCE_FILES = ft_printf.c ft_analyze_structure.c ft_display_structure.c ft_display_char.c\
-	ft_display_str.c ft_display_digit.c ft_common_aux.c ft_disdigit_aux.c ft_print_chars.c
+SOURCE_FILES = ft_printf_bonus.c ft_analyze_structure_bonus.c ft_display_structure_bonus.c ft_display_char_bonus.c\
+	ft_display_str_bonus.c ft_display_digit_bonus.c ft_helpers_bonus.c ft_digit_helper_bonus.c ft_print_chars_bonus.c
 OBJECT_FILES = $(SOURCE_FILES:.c=.o)
 
 all: $(NAME)

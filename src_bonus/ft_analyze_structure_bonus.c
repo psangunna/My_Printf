@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_analyze_structure.c                             :+:      :+:    :+:   */
+/*   ft_analyze_structure_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 17:18:21 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/03 13:25:57 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:10:08 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:10:14 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 /*
 This function iterates through the format string to identify and process 
-format flags. It sets corresponding flags in the t_flags structure based 
+format flags. It sets corresponding flags in the t_fomat structure based 
 on the founded flags.
 */
-static void	analyze_flags(t_flags *data, const char **str)
+static void	analyze_flags(t_format *data, const char **str)
 {
 	char	flag;
 
@@ -76,9 +76,9 @@ static void	get_value(int *value, const char **str, va_list *args)
 This main function orchestrates the analysis of the format string. 
 It utilizes the aforementioned functions to process flags and values,
 identifies the format specifier, and sets relevant properties in the 
-t_flags structure.
+t_fomat structure.
 */
-int	ft_analyze_structure(t_flags *data, const char **str, va_list *args)
+int	ft_analyze_structure(t_format *data, const char **str, va_list *args)
 {
 	data->precision_value = -1;
 	analyze_flags(data, str);

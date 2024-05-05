@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_chars.c                                   :+:      :+:    :+:   */
+/*   ft_print_chars_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 17:14:35 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/03 16:00:37 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:13:49 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:13:53 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 void	ft_putchar_written(char c, int	*chars_written)
 {

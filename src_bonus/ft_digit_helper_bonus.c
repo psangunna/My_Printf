@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_disdigit_aux.c                                  :+:      :+:    :+:   */
+/*   ft_digit_helper_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:24:39 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/30 21:04:41 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:10:24 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:10:29 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 /*
 This function converts an integer value to a string representation in the 
 specified base. It recursively divides the value by the base and stores 
-the remainder as digits in the temp array of the t_flags structure. 
+the remainder as digits in the temp array of the t_format structure. 
 It also handles negative values by converting them to positive before recursion.
 */
-void	ft_itoa_base(t_flags *data, t_type_digit value)
+void	ft_itoa_base(t_format *data, t_type_digit value)
 {
 	t_type_digit	tmp;
 
@@ -51,7 +51,7 @@ This function calculates the number of zero padding digits required based
 on various conditions such as left justification, width, hash flags ('#'), 
 and whether the number is negative.
 */
-static void	set_zero_pad(t_flags *data)
+static void	set_zero_pad(t_format *data)
 {
 	if (data->left_justified)
 		return ;
@@ -73,7 +73,7 @@ This function determines the number of zero padding digits required based
 on the precision value and zero padding flag. It calls set_zero_pad if zero
 padding is enabled.
 */
-void	ft_set_padding_zeros(t_flags *data)
+void	ft_set_padding_zeros(t_format *data)
 {
 	if (data->precision_value >= 0)
 	{
@@ -96,7 +96,7 @@ This function calculates the number of space characters needed for padding
 based on the width value, zero padding digits, and other conditions such as 
 the presence of hash flags, negative numbers, and special cases like pointers.
 */
-void	ft_set_padding_spaces(t_flags *data)
+void	ft_set_padding_spaces(t_format *data)
 {
 	data->padding_spaces = data->width_value - data->padding_zeros - \
 			data->nbr_len;

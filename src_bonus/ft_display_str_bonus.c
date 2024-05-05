@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_str.c                                   :+:      :+:    :+:   */
+/*   ft_display_str_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:23:52 by pamela            #+#    #+#             */
-/*   Updated: 2024/04/25 18:46:55 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 22:11:19 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 22:11:25 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 /*
 This function calculates the number of space characters needed for padding
 before the string. It considers the width and precision values specified in 
-the t_flags structure. If precision is specified and is less than the length 
+the t_format structure. If precision is specified and is less than the length 
 of the string, it calculates padding spaces based on the precision value. 
 Otherwise, it calculates padding spaces based on the length of the string.
 */
-static void	set_str_padding_spaces(t_flags *data, char *s)
+static void	set_str_padding_spaces(t_format *data, char *s)
 {
 	int	len;
 
@@ -56,7 +56,7 @@ static void	set_str_padding_spaces(t_flags *data, char *s)
  left justification is enabled, it either displays the string followed 
  by padding spaces, or padding spaces followed by the string
 */
-void	ft_display_str(t_flags *data, char *s)
+void	ft_display_str(t_format *data, char *s)
 {
 	if (s == NULL)
 		s = "(null)";

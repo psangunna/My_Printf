@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 14:52:34 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/03 13:24:39 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 19:12:02 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 19:13:41 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	set_nil(t_flags *data)
+static void	set_nil(t_format *data)
 {
 	data->no_value = 1;
-	data->precision_value = -1;
 	data->nbr_len = 5;
 	ft_memcpy(&(data->temp), "(nil)", 5);
 }
@@ -28,7 +27,7 @@ For 'x', 'X', and 'u' specifiers, it handles unsigned integers.
 For the 'p' specifier (pointer), it treats the argument as a pointer 
 and displays it.
 */
-static void	treat_digit(t_flags *data, va_list *args)
+static void	treat_digit(t_format *data, va_list *args)
 {
 	char			specifier;
 	t_type_digit	values;
@@ -64,18 +63,17 @@ specifier corresponds to a digit or pointer type ('d', 'i', 'u', 'x', 'X',
 'p'), it calls treat_digit to handle the display. Otherwise, it writes the
 specifier directly to the output.
 */
-void	ft_display_structure(t_flags *data, va_list *args)
+void	ft_display_structure(t_format *data, va_list *args)
 {
 	char	specifier;
 
 	specifier = data->specifier;
 	if (specifier == '%')
 	{
-		data->width_value = 0;
-		ft_display_char(data, '%');
+		ft_putchar_written('%', &data->chars_written);
 	}
 	else if (specifier == 'c')
-		ft_display_char(data, va_arg(*args, int));
+		ft_putchar_written(va_arg(*args, int), &data->chars_written);
 	else if (specifier == 's')
 		ft_display_str(data, va_arg(*args, char *));
 	else if (ft_strchr((const char *)"diupxX", data->specifier))

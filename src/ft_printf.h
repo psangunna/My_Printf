@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 20:59:59 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/03 16:01:31 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/05 19:23:54 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/05 19:24:00 by pamela           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 # define FLAGS		"+ 0-#"
 # define SPECIFIERS	"cspdiuxX%"
-# define NUMBERS	"0123456789"
 # define LOW_SYMBOLS	"0123456789abcdef"
 # define UP_SYMBOLS	"0123456789ABCDEF"
 
@@ -42,19 +41,10 @@ typedef union s_type_digit
  *This structure will be used as a field of the structure t_data defined below.
 */
 
-typedef struct s_flags
+typedef struct s_format
 {
-	int		left_justified;
-	int		plus;
-	int		space;
-	int		hash;
-	int		zero_pad;
-	int		width_value;
-	int		precision_value;
 	int		upper_case;
 	int		base;
-	int		padding_spaces;
-	int		padding_zeros;
 	int		signed_value;
 	int		is_negative;
 	int		is_converted;
@@ -64,30 +54,22 @@ typedef struct s_flags
 	int		no_value;
 	int		chars_written;
 
-}	t_flags;
+}	t_format;
 
 /*
  *main functions
 */
 int		ft_printf(char const *str, ...);
-int		ft_analyze_structure(t_flags *data, const char **str, va_list *args);
-void	ft_display_structure(t_flags *data, va_list *args);
-void	ft_display_digit(t_flags *data, t_type_digit values);
+int		ft_analyze_structure(t_format *data, const char **str);
+void	ft_display_structure(t_format *data, va_list *args);
+void	ft_display_digit(t_format *data, t_type_digit values);
+void	ft_display_str(t_format *data, char *s);
+void	ft_putchar_written(char c, int *chars_written);
+void	ft_putstr_written(char *s, int *chars_written);
 /*
  *helper functions
 */
 char	*ft_strchr(const char *str, int c);
-size_t	ft_strlen(const char *str);
 void	*ft_memset(void *ptr, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	ft_putchar_written(char c, int *chars_written);
-void	ft_putchar_n(char c, int precision, int *chars_written);
-void	ft_display_char(t_flags *data, int c);
-void	ft_putstr_n(char *s, int precision, int *chars_written);
-void	ft_display_str(t_flags *data, char *s);
-
-void	ft_itoa_base(t_flags *data, t_type_digit value);
-void	ft_set_padding_zeros(t_flags *data);
-void	ft_set_padding_spaces(t_flags *data);
-
 #endif
