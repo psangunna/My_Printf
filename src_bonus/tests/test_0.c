@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_0.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/07 10:09:22 by pamela            #+#    #+#             */
+/*   Updated: 2024/05/07 10:12:00 by pamela           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "ft_printf_bonus.h"
 #include <stdio.h>
@@ -7,7 +19,7 @@ int	main(void)
 {  
 	int c;
 
-    printf("\n d \n");
+    printf("\n TEST d \n");
     ft_printf(" %01d ", 0);
     ft_printf(" %02d ", -1);
     ft_printf(" %04d ", 9);
@@ -21,7 +33,7 @@ int	main(void)
     ft_printf(" %014d ", ULONG_MAX);
     ft_printf(" %015d ", 9223372036854775807LL);
     ft_printf(" %09d %010d %011d %012d %013d %014d %015d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n\n");
+    printf("\nprintf standar\n");
     printf(" %01d ", 0);
     printf(" %02d ", -1);
     printf(" %04d ", 9);
@@ -35,7 +47,7 @@ int	main(void)
     printf(" %014d ", ULONG_MAX);
     printf(" %015d ", 9223372036854775807LL);
     printf(" %09d %010d %011d %012d %013d %014d %015d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n i \n");
+    printf("\n TEST i \n");
     ft_printf(" %01i ", 0);
     ft_printf(" %02i ", -1);
     ft_printf(" %03i ", 1);
@@ -51,7 +63,7 @@ int	main(void)
     ft_printf(" %014i ", ULONG_MAX);
     ft_printf(" %015i ", 9223372036854775807LL);
     ft_printf(" %09i %010i %011i %012i %013i %014i %015i", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n\n");
+    printf("\n prinft standar\n");
     printf(" %01i ", 0);
     printf(" %02i ", -1);
     printf(" %03i ", 1);
@@ -67,7 +79,7 @@ int	main(void)
     printf(" %014i ", ULONG_MAX);
     printf(" %015i ", 9223372036854775807LL);
     printf(" %09i %010i %011i %012i %013i %014i %015i", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n u \n");
+    printf("\n TEST u \n");
     ft_printf(" %01u ", 0);
     ft_printf(" %02u ", -1);
     ft_printf(" %03u ", 1);
@@ -84,7 +96,7 @@ int	main(void)
     ft_printf(" %014u ", ULONG_MAX);
     ft_printf(" %015u ", 9223372036854775807LL);
     ft_printf(" %09u %010u %011u %012u %013u %014u %015u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n\n");
+    printf("\n printf standar\n");
     printf(" %01u ", 0);
     printf(" %02u ", -1);
     printf(" %03u ", 1);
@@ -101,7 +113,7 @@ int	main(void)
     printf(" %014u ", ULONG_MAX);
     printf(" %015u ", 9223372036854775807LL);
     printf(" %09u %010u %011u %012u %013u %014u %015u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n x \n");
+    printf("\nTEST x \n");
     ft_printf(" %02x ", -1);
     ft_printf(" %03x ", 1);
     ft_printf(" %010x ", INT_MIN);
@@ -111,7 +123,7 @@ int	main(void)
     ft_printf(" %014x ", ULONG_MAX);
     ft_printf(" %015x ", 9223372036854775807LL);
     ft_printf(" %09x %010x %011x %012x %013x %014x %015x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n\n");
+    printf("\n printf standar\n");
     printf(" %02x ", -1);
     printf(" %03x ", 1);
     printf(" %010x ", INT_MIN);
@@ -122,7 +134,7 @@ int	main(void)
     printf(" %015x ", 9223372036854775807LL);
     printf(" %09x %010x %011x %012x %013x %014x %015x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
-    printf("\n X \n");
+    printf("\nTEST X \n");
     ft_printf(" %01X ", 0);
     ft_printf(" %02X ", -1);
     ft_printf(" %03X ", 1);
@@ -139,7 +151,7 @@ int	main(void)
     ft_printf(" %014X ", ULONG_MAX);
     ft_printf(" %015X ", 9223372036854775807LL);
     ft_printf(" %09X %010X %011X %012X %013X %014X %015X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-    printf("\n\n");
+    printf("\nprintf standar\n");
     printf(" %01X ", 0);
     printf(" %02X ", -1);
     printf(" %03X ", 1);
