@@ -18,7 +18,6 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-# define FLAGS		"+ 0-#"
 # define SPECIFIERS	"cspdiuxX%"
 # define LOW_SYMBOLS	"0123456789abcdef"
 # define UP_SYMBOLS	"0123456789ABCDEF"
