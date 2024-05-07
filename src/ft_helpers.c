@@ -25,18 +25,6 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	counter;
-
-	counter = 0;
-	while (str[counter] != '\0')
-	{
-		counter++;
-	}
-	return (counter);
-}
-
 void	*ft_memset(void *ptr, int c, size_t n)
 {
 	unsigned char	*p;
