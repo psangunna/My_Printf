@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   test_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 10:12:09 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/07 10:13:59 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/07 16:13:48 by psanguna          #+#    #+#             */
+/*   Updated: 2024/05/07 16:13:51 by psanguna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-	
+
 #include "ft_printf_bonus.h"
 #include <stdio.h>
 #include <limits.h>

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_c.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/07 16:31:09 by psanguna          #+#    #+#             */
+/*   Updated: 2024/05/07 16:31:16 by psanguna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 	
 #include "ft_printf.h"
 #include <stdio.h>
@@ -5,7 +16,7 @@
 
 int	main(void)
 {  
-	int c;
+	int	c;
 
 	ft_printf("%c\n", '0');
 	ft_printf(" %c \n", '0');
@@ -20,9 +31,8 @@ int	main(void)
 	ft_printf(" %c %c %c \n", 0, '1', '2');
 	c = ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 	printf("\nmyCount%i\n", c);
-
-	printf("\nPrintf standar\n");
-
+	
+	printf("\nPrintf standar\n");	
 	printf("%c\n", '0');
 	printf(" %c \n", '0');
 	printf(" %c\n", '0' - 256);

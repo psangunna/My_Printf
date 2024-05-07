@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_analyze_structure.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pamela <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/05 19:16:26 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/05 19:16:38 by pamela           ###   ########.fr       */
+/*   Created: 2024/05/07 16:20:29 by psanguna          #+#    #+#             */
+/*   Updated: 2024/05/07 16:20:33 by psanguna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
 /*

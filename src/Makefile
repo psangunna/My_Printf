@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pamela <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/05 19:11:08 by pamela            #+#    #+#              #
-#    Updated: 2024/05/05 19:11:13 by pamela           ###   ########.fr        #
+#    Created: 2024/05/07 16:20:14 by psanguna          #+#    #+#              #
+#    Updated: 2024/05/07 16:20:18 by psanguna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

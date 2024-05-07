@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_general.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psanguna <psanguna@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 18:17:22 by pamela            #+#    #+#             */
-/*   Updated: 2024/05/05 21:59:33 by psanguna         ###   ########.fr       */
+/*   Created: 2024/05/07 16:14:38 by psanguna          #+#    #+#             */
+/*   Updated: 2024/05/07 16:14:41 by psanguna         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 #include <stdio.h>
@@ -71,8 +71,7 @@ int	main(void)
 	printf("Count:%d\n", count);
 	count = ft_printf("%*s\n", 10, "gata");
 	printf("MyCount:%d\n", count);
-
-	printf("Pruebas desbordamiento\n");
+	printf("\nPruebas desbordamiento\n");
 	count = printf("%p\n", (void *)-14523);
 	printf("Count:%d\n", count);
 	count = ft_printf("%p\n", (void *)-14523);
@@ -106,7 +105,7 @@ int	main(void)
 	count = ft_printf(" %p ", -1);
 	printf("MyCount:%d\n", count);
 	printf("\n");
-    ft_printf(" %p ", 1);
+	ft_printf(" %p ", 1);
 	printf("\n");
 	ft_printf(" %p ", 15);
 	printf("\n");
