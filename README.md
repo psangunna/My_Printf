@@ -24,7 +24,7 @@ The **ft_printf** function allows formatted text output similar to the standard 
 * The **libftprintf.a** file must be created in the root of your repository.
 
 ### Compilation
-To compile and create the **libftprintf.a** library, a **Makefile** file have to be created. It will generate the **libftprintf.a** file in the root of the repository.
+To compile and create the **libftprintf.a** library, a **Makefile** have to be created. It will generate the **libftprintf.a** file in the root of the repository.
 
 ### Usage  
 To use the **ft_printf** function, include the **ft_printf.h** header and compile the project with the **libftprintf.a** library. Below is an example:  
