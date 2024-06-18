@@ -50,3 +50,5 @@ ft_printf("Hexadecimal (lowercase): %x\n", 255);
 ft_printf("Hexadecimal (uppercase): %X\n", 255);
 ft_printf("Percentage: %%\n");
 ```
+### *Acknowledgements*
+This project is part of the curriculum at [42 Madrid](https://www.42madrid.com/). Thanks to the 42 Network for providing the resources and guidance to complete this project.
